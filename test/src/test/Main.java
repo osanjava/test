@@ -6,6 +6,6 @@ public class Main {
 
 	public static void main(String[] args) {
 		String s = "/api/abc";
-		System.out.println(Pattern.matches(s, "/api/abc"));
+		System.out.println(Pattern.matches(s, "/api/abc1234"));
 	}
 }
