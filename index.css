@@ -220,25 +220,25 @@ body,
 }
 
 /* silderbar样式 */
-.crm-menu {
+.silder_bar .crm-menu {
   background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*2B8fRL2hFDUAAAAAAAAAAABjARQnAQ)
     no-repeat !important;
   background-size: cover !important;
 }
-.crm-menu .crm-menu-toggle {
+.silder_bar .crm-menu .crm-menu-toggle {
   display: none;
 }
-.crm-menu > .crm-menu-submenu > .crm-menu-submenu-item {
+.silder_bar .crm-menu > .crm-menu-submenu > .crm-menu-submenu-item {
   width: 100%;
   color: #fff;
   background: transparent;
   display: flex;
   font-size: 18px;
 }
-.crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu-item {
+.silder_bar .crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu-item {
   color: #a2d7ff;
 }
-.crm-menu > .crm-menu-submenu:nth-of-type(2) .crm-menu-submenu-item {
+.silder_bar .crm-menu > .crm-menu-submenu:nth-of-type(2) .crm-menu-submenu-item {
   width: 100%;
   height: 25px;
   line-height: 25px;
@@ -247,13 +247,13 @@ body,
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.crm-menu > .crm-menu-submenu:nth-of-type(2) .crm-menu-submenu-item:hover{
+.silder_bar .crm-menu > .crm-menu-submenu:nth-of-type(2) .crm-menu-submenu-item:hover{
   background: #fff;
   color: #0071BC;
   width:calc(100% - 20px);
   margin-left:20px;
 }
-.crm-menu > .crm-menu-submenu:nth-of-type(2) .crm-menu-submenu-item-vertical-selected {
+.silder_bar .crm-menu > .crm-menu-submenu:nth-of-type(2) .crm-menu-submenu-item-vertical-selected {
   background: #fff;
   color: #A2D7FF;
   /* position: relative; */
@@ -262,7 +262,7 @@ body,
   /* background-size: cover !important; */
   /* box-shadow: 0 0 0 #000 inset; */
 }
-.crm-menu-submenu-item-vertical:hover i.anticon {
+.silder_bar .crm-menu-submenu-item-vertical:hover i.anticon {
   color: #fff;
 }
 /* .crm-menu > .crm-menu-submenu:nth-of-type(2) .crm-menu-submenu-item-vertical-selected::before {
@@ -275,10 +275,14 @@ body,
   right: 0;
   top: calc(50% - 4px);
 } */
-.crm-menu .crm-menu-submenu-item-icon .anticon {
+.silder_bar .crm-menu .crm-menu-submenu-item-icon .anticon {
   color: #fff;
 }
-.crm-menu .crm-menu-submenu .crm-menu-submenu-item .crm-menu-submenu-item-arrow {
+.silder_bar .crm-menu .crm-menu-submenu .crm-menu-submenu-item .crm-menu-submenu-item-arrow {
+  color: #fff;
+  position: static;
+}
+.silder_bar .crm-menu .crm-menu-submenu .crm-menu-submenu-item .crm-menu-submenu-item-arrow i.anticon{
   color: #fff;
 }
 /* .crm-menu .crm-menu-submenu .crm-menu-submenu-item .crm-menu-submenu-item-arrow .anticon-down,
@@ -300,16 +304,16 @@ body,
   .anticon-up::before {
   content: '\E604';
 } */
-.crm-menu .crm-menu-submenu-item-vertical:first-child {
+.silder_bar .crm-menu .crm-menu-submenu-item-vertical:first-child {
   border: none;
 }
-.crm-menu .crm-menu-submenu-item-vertical {
+.silder_bar .crm-menu .crm-menu-submenu-item-vertical {
   border: none;
 }
-.crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu {
+.silder_bar .crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu {
   padding: 3px 0;
 }
-.crm-menu
+.silder_bar .crm-menu
   > .crm-menu-submenu
   > .crm-menu-submenu-children
   .crm-menu-submenu
@@ -337,7 +341,7 @@ body,
   background-color: transparent;
   padding-left: 52px;
 } */
-.crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu-item-vertical:hover {
+.silder_bar .crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu-item-vertical:hover {
   background: #fff;
   color: #0071BC;
   position: relative;
@@ -345,7 +349,7 @@ body,
 /* .crm-menu > .crm-menu-submenu .crm-menu-submenu-item-vertical-selected-children {
   color: #fff !important;
 } */
-.crm-menu
+.silder_bar .crm-menu
   > .crm-menu-submenu
   > .crm-menu-submenu-children
   .crm-menu-submenu-item-vertical-selected {
@@ -357,10 +361,10 @@ body,
 .crm-menu-submenu-item-vertical-selected:before {
   display: none;
 } */
-.crm-menu-submenu-item-icon {
+.silder_bar .crm-menu-submenu-item-icon {
   width: 20px;
 }
-.crm-menu-submenu-item-icon .crm-menu-submenu-item-icon-img {
+.silder_bar .crm-menu-submenu-item-icon .crm-menu-submenu-item-icon-img {
   height: 20px;
   vertical-align: middle;
 }
