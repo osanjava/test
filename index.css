@@ -29,8 +29,8 @@ body,
   padding: 10px 0;
 }
 .amap-icon {
-  /* width: 120px !important;
-  height: 120px !important; */
+  width: 60px !important;
+  height: 60px !important;
 }
 .amap-icon img {
   display: none;
@@ -77,22 +77,22 @@ body,
 } 
 .trading_cont .trading_icon{
   color:#fff;
-  width:30px;
-  height:30px;
+  width:60px;
+  height:60px;
   margin:20px auto;
-  border-radius:16px 16px 16px 0;
+  border-radius:30px 30px 30px 0;
   -webkit-transform:rotate(-45deg);
   -moz-transform: rotate(-45deg);
   transform:rotate(-45deg);
 } 
 .trading_cont .trading_icon:after{ 
   content: "";
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border:2px solid #fff;
   position: absolute; 
-  top:11px;
-  left:11px;
+  top:25px;
+  left:25px;
   border-radius: 100%;
 }
 .trading_cont .circle{
@@ -635,10 +635,13 @@ body,
 .map_right_title_cont{
   position: absolute;
   width: 42px;
-  height: 212px;
   top:0;
   bottom:0;
   left:0;
   margin:auto;
-  background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*ArWCR4cm-ygAAAAAAAAAAABjARQnAQ) no-repeat;
+}
+.map_right_title_cont .cicada-label{
+  background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*ArWCR4cm-ygAAAAAAAAAAABjARQnAQ) no-repeat center;
+  background-size: cover;
+  padding: 40px 0;
 }
