@@ -634,7 +634,7 @@ body,
 }
 .map_right_title_cont{
   position: absolute;
-  width: 42px;
+  width: 44px;
   top:0;
   bottom:0;
   left:0;
@@ -644,4 +644,13 @@ body,
   background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*ArWCR4cm-ygAAAAAAAAAAABjARQnAQ) no-repeat center;
   background-size: cover;
   padding: 40px 0;
+}
+.map_right_cont_title{
+  margin-left: 30px;
+  color: #fff;
+  background:#0071be;
+  padding: 1px 20px;
+  line-height: 1;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
