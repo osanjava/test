@@ -255,7 +255,7 @@ body,
 .silder_bar .crm-menu .crm-menu-submenu .crm-menu-submenu-item .crm-menu-submenu-item-arrow i.anticon{
   color: #fff;
 }
-.silder_bar .crm-menu-submenu-item-vertical-selected:after{
+.silder_bar .crm-menu-submenu-item-vertical-selected:after,.silder_bar .crm-menu-submenu-item-vertical-selected:before{
   display: none;
 }
 .silder_bar .crm-menu .crm-menu-submenu-item-vertical:first-child {
