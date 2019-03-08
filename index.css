@@ -4,6 +4,7 @@ body,
   width: 1440px;
   margin: 0 auto;
 }
+/* 部分select样式 */
 .select_cont {
   min-width: 300px;
   max-width: 800px;
@@ -17,6 +18,8 @@ body,
 .select_cont ul li {
   margin: 10px;
 }
+
+/* 地图各类”点“样式 */
 .circular_icon {
   width: 60px;
   height: 60px;
@@ -112,9 +115,11 @@ body,
   box-shadow: 1px 1px 1px #666;
 }
 
+
+/* 
 .ant-dropdown-link {
   color: #ccc;
-}
+} */
 .ant-checkbox-group .ant-checkbox-group-item {
   position: relative;
 }
@@ -130,26 +135,8 @@ body,
 .ant-checkbox.ant-checkbox-checked + span {
   color: #1890ff;
 }
-.areaChart {
-  width: 100%;
-  font-size: 10px;
-  background: #fff;
-  text-align: left;
-  margin-bottom: 20px;
-  padding:15px 30px;
-}
-.areaChart .cicada-label {
-  font-size: 20px;
-  display: block;
-  border-left: 2px solid #000;
-  text-align: left;
-  margin-bottom: 15px;
-  padding:0 0 0 10px;
-  color: #000;
-  background:transparent;
-  /* background: linear-gradient(#fff, rgb(230, 230, 230)); */
-}
 
+/* 选择区域弹窗基本样式 */
 .region_cont .ant-radio-button-wrapper:not(:first-child)::before {
   display: none;
 }
@@ -242,8 +229,6 @@ body,
   width: 100%;
   height: 25px;
   line-height: 25px;
-  /* height: 90px;
-  line-height: 90px; */
   margin-top: 30px;
   margin-bottom: 30px;
 }
@@ -256,25 +241,10 @@ body,
 .silder_bar .crm-menu > .crm-menu-submenu:nth-of-type(2) .crm-menu-submenu-item-vertical-selected {
   background: #fff;
   color: #A2D7FF;
-  /* position: relative; */
-  /* background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*Q8szRq0w8C4AAAAAAAAAAABjAQAAAQ/original)
-    no-repeat; */
-  /* background-size: cover !important; */
-  /* box-shadow: 0 0 0 #000 inset; */
 }
 .silder_bar .crm-menu-submenu-item-vertical:hover i.anticon {
   color: #fff;
 }
-/* .crm-menu > .crm-menu-submenu:nth-of-type(2) .crm-menu-submenu-item-vertical-selected::before {
-  display: block;
-  content: '';
-  border-width: 10px 10px 10px 10px;
-  border-style: solid;
-  border-color: transparent #fff transparent transparent;
-  position: absolute;
-  right: 0;
-  top: calc(50% - 4px);
-} */
 .silder_bar .crm-menu .crm-menu-submenu-item-icon .anticon {
   color: #fff;
 }
@@ -285,25 +255,9 @@ body,
 .silder_bar .crm-menu .crm-menu-submenu .crm-menu-submenu-item .crm-menu-submenu-item-arrow i.anticon{
   color: #fff;
 }
-/* .crm-menu .crm-menu-submenu .crm-menu-submenu-item .crm-menu-submenu-item-arrow .anticon-down,
-.crm-menu .crm-menu-submenu .crm-menu-submenu-item .crm-menu-submenu-item-arrow .anticon-up {
-  color: #fff;
-  font-size: 12px;
-} */
-/* .crm-menu
-  .crm-menu-submenu
-  .crm-menu-submenu-item
-  .crm-menu-submenu-item-arrow
-  .anticon-down::before {
-  content: '\E606';
+.silder_bar .crm-menu-submenu-item-vertical-selected:after{
+  display: none;
 }
-.crm-menu
-  .crm-menu-submenu
-  .crm-menu-submenu-item
-  .crm-menu-submenu-item-arrow
-  .anticon-up::before {
-  content: '\E604';
-} */
 .silder_bar .crm-menu .crm-menu-submenu-item-vertical:first-child {
   border: none;
 }
@@ -327,28 +281,6 @@ body,
   margin-top: 0;
   margin-left: 20px;
 }
-/* .crm-menu > .crm-menu-submenu:nth-of-type(2) > .crm-menu-submenu-children {
-  margin-bottom: 0;
-}
-.crm-menu > .crm-menu-submenu > .crm-menu-submenu-item .crm-menu-submenu-item-arrow {
-  position: static;
-  margin-left: 5px;
-}
-.crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu-vertical:last-child {
-  margin-bottom: 50px !important;
-}
-.crm-menu > .crm-menu-submenu > .crm-menu-submenu-item-vertical:hover {
-  background-color: transparent;
-  padding-left: 52px;
-} */
-.silder_bar .crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu-item-vertical:hover {
-  background: #fff;
-  color: #0071BC;
-  position: relative;
-}
-/* .crm-menu > .crm-menu-submenu .crm-menu-submenu-item-vertical-selected-children {
-  color: #fff !important;
-} */
 .silder_bar .crm-menu
   > .crm-menu-submenu
   > .crm-menu-submenu-children
@@ -357,10 +289,6 @@ body,
   color: #0071BC;
   position: relative;
 }
-/* .crm-menu-submenu-item-vertical-selected:after,
-.crm-menu-submenu-item-vertical-selected:before {
-  display: none;
-} */
 .silder_bar .crm-menu-submenu-item-icon {
   width: 20px;
 }
@@ -370,9 +298,11 @@ body,
 }
 
 
-
+/* 指数类页面table样式 */
 .table_cont{
   padding:0 45px;
+  height:330px;
+  overflow-y: auto;
 }
 .table_cont .ant-table .ant-table-content .ant-table-header,.table_cont .ant-table .ant-table-content .ant-table-header .ant-table-thead>tr>th{
   background:transparent;
@@ -429,7 +359,6 @@ body,
   color:#0071BC;
   font-size: 18px;
 }
-
 .table_btn .ant-btn{
   border-color:#0071BC;
   color: #0071BC;
@@ -450,6 +379,7 @@ body,
   font-size: 12px;
 }
 
+/* 地图页面单选框样式 */
 .map_radio_switch .ant-radio-group{
   width:100%;
   display: flex;
@@ -472,7 +402,6 @@ body,
   background-color: #fff;
   color: #338de6;
 }
-
 
 .radio_screen_cont .ant-radio-group{
   width:100%;
@@ -499,7 +428,7 @@ body,
   color: #338de6;
 }
 
-
+/* 地图页面table样式 */
 .map_table_cont .ant-table,.map_table_cont .ant-table .ant-table-content .ant-table-body table{
   border-radius: 0;
 }
@@ -523,6 +452,8 @@ body,
 .map_table_cont .ant-table-tbody>tr.ant-table-row-hover>td,.map_table_cont .ant-table-tbody>tr:hover>td,.map_table_cont .ant-table-thead>tr.ant-table-row-hover>td,.map_table_cont .ant-table-thead>tr:hover>td{
   background: transparent;
 }
+
+/* 地图页面搜索框 */
 .map_search_cont{
   width:224px;
   height: 26px;
@@ -550,7 +481,7 @@ body,
   background-size: auto;
 }
 
-
+/* 指数类页面 图表转换按钮样式 */
 .column_cont .cicada-label{
   background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*CCnRT4bC4ecAAAAAAAAAAABjARQnAQ) no-repeat center;
 }
@@ -564,7 +495,7 @@ body,
   background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*chepT4Xg-UAAAAAAAAAAAABjARQnAQ) no-repeat center;
 }
 
-
+/* 地图上切换筛选条件框样式 */
 .popup_cont_title{
   position: absolute;
   width:42px;
@@ -589,29 +520,10 @@ body,
   border-right: 1px dashed #9A9A9A;
 }
 .condition_screening_cont .cicada-label{
-  /* padding: 0 14px 0; */
   font-size:14px!important;
   cursor: pointer;
 }
-/* .street_label .cicada-label{
-  background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*SgJDRZLCCgoAAAAAAAAAAABjARQnAQ) no-repeat;
-}
-.business_label .cicada-label{
-  background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*yp--QYdUPo0AAAAAAAAAAABjARQnAQ) no-repeat;
-}
-.natural_label .cicada-label{
-  background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*8ikxRbjjKy0AAAAAAAAAAABjARQnAQ) no-repeat;
-}
-.work_label .cicada-label{
-  background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*ejD7T5aHmhoAAAAAAAAAAABjARQnAQ) no-repeat;
-}
-.holiday_label .cicada-label{
-  background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*UnemT6uaq6wAAAAAAAAAAABjARQnAQ) no-repeat;
-} */
-/* .refresh_cont .cicada-label{
-  padding:0 0 0 14px;
-  background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*QE8gQIKwwQUAAAAAAAAAAABjARQnAQ) no-repeat;
-} */
+
 .natural_label{padding-left: 20px;}
 .refresh_cont .cicada-label{
   padding: 0 0 0 14px;
@@ -632,13 +544,14 @@ body,
   height:auto!important; */
 }
 
-
+/* 地图左侧展示框 */
 .map_left_cont{
   width:370px;
   padding:0 20px;
   background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*sML4QJVUMKEAAAAAAAAAAABjARQnAQ) no-repeat;
   background-size: cover;
 }
+/* 地图右侧展示框样式 */
 .map_right_title_cont{
   position: absolute;
   width: 44px;
