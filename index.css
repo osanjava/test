@@ -3,6 +3,7 @@ body,
 .page-panel {
   width: 1440px;
   margin: 0 auto;
+  overflow: hidden;
 }
 /* 部分select样式 */
 .select_cont {
