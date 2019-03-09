@@ -1,0 +1,57 @@
+currentIndexNum
+
+areaName
+
+JSON.stringify(util.session.get('allCountyCode'))
+
+JSON.stringify(util.session.get('allTownCode'))
+
+JSON.stringify(util.session.get('allTradingCode'))
+
+consumerIndexRanking
+disposeArrayData(result.resultObj).showValues.length > 10 ? disposeArrayData(result.resultObj).showValues.slice(0, 10) : disposeArrayData(result.resultObj).showValues
+
+
+
+
+if (util.session.get('allTown').length > 0) {
+    var arr = [];
+    for (var a = 0;a < util.session.get('allTown').length;a++) {
+      arr.push(Object.assign({'value': util.session.get('allTown')[a].areaCode}, {'label': util.session.get('allTown')[a].areaName}))
+    }
+    bindUpdate(store, 'selectFluctuationOfConsumption.options', arr);
+    if (arr.length > 3) {
+      bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value,arr[1].value,arr[2].value]);
+    }else  if (arr.length > 2){
+      bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value,arr[1].value]);
+    }else  if (arr.length > 1){
+      bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value]);
+    }
+  }
+
+if (util.session.get('allTrading').length > 0) {
+    var arr = [];
+    for (var a = 0;a < util.session.get('allTrading').length;a++) {
+      arr.push(Object.assign({'value': util.session.get('allTrading')[a].areaCode}, {'label': util.session.get('allTrading')[a].areaName}))
+    }
+    bindUpdate(store, 'selectFluctuationOfConsumption.options', arr);
+    if (arr.length > 3) {
+      bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value, arr[1].value, arr[2].value]);
+    } else if (arr.length > 2) {
+      bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value, arr[1].value]);
+    } else if (arr.length > 1) {
+      bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value]);
+    }
+  }
+
+  if (util.session.get('allCounty').length > 0) {
+    var arr = [];
+    for (var a = 0;a < util.session.get('allCounty').length;a++) {
+      arr.push(Object.assign({'value': util.session.get('allCounty')[a].countyCode}, {'label': util.session.get('allCounty')[a].countyName}))
+    }
+    bindUpdate(store, 'selectFluctuationOfConsumption.options', arr);
+    if (arr.length > 3) {
+      console.log(arr)
+      bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value, arr[1].value, arr[2].value]);
+    }
+  }

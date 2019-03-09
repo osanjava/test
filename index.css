@@ -302,8 +302,6 @@ body,
 /* 指数类页面table样式 */
 .table_cont{
   padding:0 45px;
-  height:330px;
-  overflow-y: auto;
 }
 .table_cont .ant-table .ant-table-content .ant-table-header,.table_cont .ant-table .ant-table-content .ant-table-header .ant-table-thead>tr>th{
   background:transparent;
