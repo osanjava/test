@@ -46,8 +46,8 @@ body,
 }
 .town_cont{
   position: relative;
-  top:-33px;
-  left:-33px;
+  /* top:-33px;
+  left:-33px; */
 }
 .town_cont .circular{
   width:32px;
