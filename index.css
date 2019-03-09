@@ -31,6 +31,9 @@ body,
   font-size: 16px;
   line-height: normal;
   padding: 10px 0;
+  position: relative;
+  top:-60px;
+  left:-60px;
 }
 .amap-icon {
   width: 60px !important;
@@ -43,6 +46,8 @@ body,
 }
 .town_cont{
   position: relative;
+  top:-33px;
+  left:-33px;
 }
 .town_cont .circular{
   width:32px;
@@ -71,7 +76,9 @@ body,
   color: #fff;
 }
 .trading_cont{
-  margin-left: -50%;
+  position: relative;
+  top:-80px;
+  left:-80px;
 }
 .trading_cont .word{
   text-align: center;
