@@ -21,6 +21,9 @@ body,
 }
 
 /* 地图各类”点“样式 */
+/* .amap-markers .amap-marker{
+  z-index: 101;
+} */
 .circular_icon {
   width: 60px;
   height: 60px;
@@ -31,9 +34,6 @@ body,
   font-size: 16px;
   line-height: normal;
   padding: 10px 0;
-  /* position: relative;
-  top:-60px;
-  left:-60px; */
 }
 .amap-icon {
   width: 60px !important;
@@ -46,8 +46,6 @@ body,
 }
 .town_cont{
   position: relative;
-  /* top:-33px;
-  left:-33px; */
 }
 .town_cont .circular{
   width:32px;
@@ -77,8 +75,6 @@ body,
 }
 .trading_cont{
   position: relative;
-  top:-80px;
-  left:-80px;
 }
 .trading_cont .word{
   text-align: center;
@@ -437,6 +433,7 @@ body,
 /* 地图页面table样式 */
 .map_table_cont .ant-table,.map_table_cont .ant-table .ant-table-content .ant-table-body table{
   border-radius: 0;
+  border-left: none;
 }
 .map_table_cont .ant-table .ant-table-content .ant-table-body thead.ant-table-thead>tr{
   border:1px solid #fff;
@@ -447,12 +444,21 @@ body,
   padding:0;
   text-align: center;
   font-weight: normal;
+  border-right: none;
+}
+.map_table_cont .ant-table .ant-table-content .ant-table-body thead.ant-table-thead>tr>th:first-child{
+  border-left: 1px solid #fff;
+}
+.map_table_cont .ant-table .ant-table-content .ant-table-body thead.ant-table-thead>tr>th:last-child{
+  border-right: 1px solid #fff;
 }
 .map_table_cont .ant-table .ant-table-content .ant-table-header .ant-table-thead>tr>th,.map_table_cont .ant-table .ant-table-content .ant-table-body .ant-table-tbody>tr>td{
   border-bottom: 1px dashed #fff;
-  padding:3px 0;
+  padding: 10px 0;
   text-align: center;
   color:#fff;
+  border-left:none;
+  border-right: none;
   font-weight: normal;
 }
 .map_table_cont .ant-table-tbody>tr.ant-table-row-hover>td,.map_table_cont .ant-table-tbody>tr:hover>td,.map_table_cont .ant-table-thead>tr.ant-table-row-hover>td,.map_table_cont .ant-table-thead>tr:hover>td{

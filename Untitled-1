@@ -1,0 +1,105 @@
+ getIcon()['top']
+
+ getIcon()['bottom']
+
+
+bindUpdate(store, 'currentIndexNum.text', disposeArrayData(result.resultObj).values[0].indexVal);
+if (disposeArrayData(result.resultObj).values[0].indexValDiy > 0) {
+    bindUpdate(store, 'indexStatusCurrentWith.color', '#8CC63F');
+    bindUpdate(store, 'indexStatusCurrentWithThan.src', getIcon()['top']);
+} else {
+    bindUpdate(store, 'indexStatusCurrentWith.color', '#FF3F4F');
+    bindUpdate(store, 'indexStatusCurrentWithThan.src', getIcon()['bottom']);
+}
+if (disposeArrayData(result.resultObj).values[0].indexValMom > 0) {
+    bindUpdate(store, 'indexStatusCurrentRing.color', '#8CC63F');
+    bindUpdate(store, 'indexStatusCurrentRingThan.src', getIcon()['top']);
+} else {
+    bindUpdate(store, 'indexStatusCurrentRing.color', '#FF3F4F');
+    bindUpdate(store, 'indexStatusCurrentRingThan.src',getIcon()['bottom']);
+}
+
+if (result.success) {
+    if (disposeArrayData(result.resultObj).showValues.length > 0) {
+    bindUpdate(store, 'fluctuationOfConsumptionIndex.data', disposeArrayData(result.resultObj).showValues);
+    } else {
+    util.message.error('未获取到数据')
+    }
+} else {
+    util.message.error(result.errorMsg)
+}
+
+if (result.success) {
+    if (disposeArrayData(result.resultObj).showValues.length > 0) {
+    bindUpdate(store, 'indexTable.list', disposeArrayData(result.resultObj).showValues);
+    } else {
+    util.message.error('未获取到数据')
+    }
+} else {
+    util.message.error(result.errorMsg)
+}
+
+
+if (result.success) {
+        if (disposeArrayData(result.resultObj).showValues.length > 0) {
+          bindUpdate(store, 'consumerIndexRanking.data', disposeArrayData(result.resultObj).showValues.length > 10 ? disposeArrayData(result.resultObj).showValues.slice(0, 10) : disposeArrayData(result.resultObj).showValues);
+        }
+      } else {
+        util.message.error(result.errorMsg)
+      }
+
+areaName
+
+
+
+
+const allTrading = util.session.get('allTrading');
+const allTradingCode=util.session.get('allTradingCode');
+if (allTrading.length > 0) {
+var arr = [];
+allTrading.map((item, index)=>{
+    arr.push(Object.assign({'value': item.areaCode}, {'label': item.areaName}))
+})
+bindUpdate(store, 'selectFluctuationOfConsumption.options', arr);
+if (arr.length > 3) {
+    bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value, arr[1].value, arr[2].value]);
+} else if (arr.length > 2) {
+    bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value, arr[1].value]);
+} else if (arr.length > 1) {
+    bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value]);
+}
+}
+
+const allTown = util.session.get('allTown');
+const allTownCode = util.session.get('allTownCode');
+if (allTown.length > 0) {
+var arr = [];
+allTown.map((item, index)=>{
+    arr.push(Object.assign({'value': item.areaCode}, {'label': item.areaName}))
+})
+bindUpdate(store, 'selectFluctuationOfConsumption.options', arr);
+if (arr.length > 3) {
+    bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value, arr[1].value, arr[2].value]);
+} else if (arr.length > 2) {
+    bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value, arr[1].value]);
+} else if (arr.length > 1) {
+    bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value]);
+}
+}
+
+const allCounty = util.session.get('allCounty');
+  const allCountyCode =util.session.get('allCountyCode');
+  if(allCounty.length>0){
+    const arr = [];
+    allCounty.map((item,index)=>{
+      arr.push(Object.assign({'value': item.countyCode}, {'label': item.countyName}))
+    })
+    bindUpdate(store, 'selectFluctuationOfConsumption.options', arr);
+    if (arr.length > 3) {
+        bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value, arr[1].value, arr[2].value]);
+    } else if (arr.length > 2) {
+        bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value, arr[1].value]);
+    } else if (arr.length > 1) {
+        bindUpdate(store, 'selectFluctuationOfConsumption.value', [arr[0].value]);
+    }
+  }
