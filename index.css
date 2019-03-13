@@ -315,7 +315,7 @@ body,
   text-align: center;
 }
 .table_cont .ant-table .ant-table-content .ant-table-body .ant-table-tbody>tr>td{
-  color:#0071BC;
+  /* color:#0071BC; */
 }
 .table_cont .clearfix{
   display:flex;
@@ -336,7 +336,7 @@ body,
   line-height: 14px;
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-item{
-  color:#0071BC;
+  /* color:#0071BC; */
   border:none;
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-item a{
@@ -358,7 +358,7 @@ body,
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-prev a::after,
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-next a::after{
-  color:#0071BC;
+  /* color:#0071BC; */
   font-size: 18px;
 }
 .table_btn .ant-btn{
