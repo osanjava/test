@@ -246,6 +246,9 @@ body,
   background: #fff;
   color: #A2D7FF;
 }
+.silder_bar .crm-menu>.crm-menu-submenu .crm-menu-submenu-item-vertical-selected-children{
+  color: #fff!important;
+}
 .silder_bar .crm-menu-submenu-item-vertical:hover i.anticon {
   color: #fff;
 }
