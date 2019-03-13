@@ -346,14 +346,14 @@ body,
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-item-active{
   color: #fff;
-  background:#0071BC;
+  /* background:#0071BC; */
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-item-active a{
   color: #fff;
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-prev a,
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-next a{
-  color:#0071BC;
+  /* color:#0071BC; */
   border-color: transparent;
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-prev a::after,
@@ -571,11 +571,15 @@ body,
   bottom:0;
   left:0;
   margin:auto;
+  letter-spacing: 0.3em;
+  writing-mode: vertical-rl;
+  -webkit-writing-mode: vertical-rl;
+  -moz-writing-mode: vertical-rl;
+  -ms-writing-mode: vertical-rl;
+  -o-writing-mode: vertical-rl;
 }
 .map_right_title_cont .cicada-label{
   background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*ArWCR4cm-ygAAAAAAAAAAABjARQnAQ) no-repeat center;
-  background-size: cover;
-  padding: 40px 0;
 }
 .map_right_cont_title{
   margin-left: 30px;
