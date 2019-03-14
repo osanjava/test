@@ -41,8 +41,8 @@ body,
   background:rgb(17, 144, 255)
 }
 .amap-icon {
-  /* width: 60px !important;
-  height: 60px !important; */
+  width: 60px !important;
+  height: 60px !important;
 }
 .amap-icon img {
   display: none;
