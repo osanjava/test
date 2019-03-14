@@ -473,13 +473,16 @@ body,
   border-right: 1px solid #fff;
 }
 .map_table_cont .ant-table .ant-table-content .ant-table-header .ant-table-thead>tr>th,.map_table_cont .ant-table .ant-table-content .ant-table-body .ant-table-tbody>tr>td{
-  border-bottom: 1px dashed #fff;
+  border-bottom: thin dashed #fff;
   padding: 10px 0;
   text-align: center;
   color:#fff;
   border-left:none;
   border-right: none;
   font-weight: normal;
+}
+.map_table_cont .ant-table .ant-table-content .ant-table-header .ant-table-thead>tr>th,.map_table_cont .ant-table .ant-table-content .ant-table-body .ant-table-tbody>tr:last-child td{
+  border-bottom: thin solid #fff;
 }
 .map_table_cont .ant-table-tbody>tr.ant-table-row-hover>td,.map_table_cont .ant-table-tbody>tr:hover>td,.map_table_cont .ant-table-thead>tr.ant-table-row-hover>td,.map_table_cont .ant-table-thead>tr:hover>td{
   background: transparent;
