@@ -27,13 +27,18 @@ body,
 .circular_icon {
   width: 60px;
   height: 60px;
-  color: #0C4CA3;
   border-radius: 50%;
   text-align: center;
   vertical-align: middle;
   font-size: 16px;
   line-height: normal;
   padding: 10px 0;
+  background:rgba(17, 144, 255, 0.5);
+  box-shadow: 0 0 4px rgba(0,0,0,0.5);
+  color:#fff
+}
+.circular_icon:hover{
+  background:rgb(17, 144, 255)
 }
 .amap-icon {
   width: 60px !important;
@@ -44,6 +49,7 @@ body,
   width: 100% !important;
   height: 100% !important;
 }
+
 .town_cont{
   position: relative;
 }
@@ -51,46 +57,57 @@ body,
   width:32px;
   height:32px;
   border-radius: 50%;
-  border:1px solid #fff;
+  border: 1px solid rgb(24, 144, 255);
   box-sizing: border-box;
 }
 .town_cont .slash{
   width: 10px;
   height: 1px;
-  background-color: #fff;
+  background-color: rgb(24, 144, 255);
   transform: rotate(147deg);
   position: absolute;
   left: 26px;
   top: 24px;
 }
 .town_cont .word{
-  font-size: 16px;
-  padding: 0 5px 0;
   border-bottom: 1px solid #fff;
   position: absolute;
   left: 35px;
   top: -2px;
   white-space: nowrap;
+  font-size: 14px;
+  padding: 2px 4px;
   color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid rgb(24, 144, 255);
+  border-radius: 4px;
 }
+
+
 .trading_cont{
   position: relative;
 }
 .trading_cont .word{
   text-align: center;
-  color: #4D4D4D;
-  font-size: 18px;
   white-space: nowrap;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 1px 6px;
+  border-radius: 12px;
+  box-shadow: 0 0 4px #fff;
+  color:#fff
 } 
 .trading_cont .trading_icon{
   color:#fff;
-  width:60px;
-  height:60px;
+  width:30px;
+  height:30px;
+  opacity: 0.85;
   margin:20px auto;
   border-radius:30px 30px 30px 0;
   -webkit-transform:rotate(-45deg);
   -moz-transform: rotate(-45deg);
   transform:rotate(-45deg);
+  
 } 
 .trading_cont .trading_icon:after{ 
   content: "";
@@ -98,8 +115,8 @@ body,
   height: 10px;
   border:2px solid #fff;
   position: absolute; 
-  top:25px;
-  left:25px;
+  top:10px;
+  left:10px;
   border-radius: 100%;
 }
 .trading_cont .circle{
@@ -470,11 +487,16 @@ body,
 
 /* 地图页面搜索框 */
 .map_search_cont{
-  width:224px;
-  height: 26px;
-  border-radius: 10px;
   background: #fff;
   overflow: hidden;
+  display: flex;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  border-radius: 4px;
+  padding: 6px;
+  height: 38px;
 }
 .map_search_cont .ant-input-affix-wrapper{
   height: 26px;
@@ -486,7 +508,7 @@ body,
   padding-right:0;
   box-sizing: border-box;
   border:none;
-  border-right: 1px dashed #333;
+  border-right: none;
 }
 .map_search_cont .ant-btn{
   border:none;
@@ -523,10 +545,10 @@ body,
 }
 .condition_screening_cont{
   position: absolute;
-  display: inline-flex;
-  right: 70px;
+  right: 30px;
   top:30px;
   padding: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,.5);
   background-color: #fff;
   border-radius: 4px;
 }
