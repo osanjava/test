@@ -451,6 +451,9 @@ body,
 }
 
 /* 地图页面table样式 */
+.map_table_cont .cicada-block-item-margin-default{
+  margin: 0;
+}
 .map_table_cont .ant-table,.map_table_cont .ant-table .ant-table-content .ant-table-body table{
   border-radius: 0;
   border-left: none;
