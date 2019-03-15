@@ -598,7 +598,7 @@ body,
 /* 地图右侧展示框样式 */
 .map_right_title_cont{
   position: absolute;
-  width: 44px;
+  width: 36px;
   top:0;
   bottom:0;
   left:0;
@@ -612,6 +612,7 @@ body,
 }
 .map_right_title_cont .cicada-label{
   background: url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*ArWCR4cm-ygAAAAAAAAAAABjARQnAQ) no-repeat center;
+  background-size: contain;
 }
 .map_right_cont_title{
   margin-left: 30px;
