@@ -599,6 +599,7 @@ body,
 .map_right_title_cont{
   position: absolute;
   width: 36px;
+  height: 172px;
   top:0;
   left:0;
   letter-spacing: 0.3em;
