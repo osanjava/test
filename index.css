@@ -266,6 +266,10 @@ body,
   background: #fff;
   color: #0071BC;
 }
+.silder_bar .crm-menu > .crm-menu-submenu .crm-menu-submenu-children a.crm-menu-submenu-item-vertical:hover{
+ color: #0071BC;
+ background-color: #FFF;
+}
 .silder_bar .crm-menu>.crm-menu-submenu .crm-menu-submenu-item-vertical-selected-children{
   color: #fff!important;
 }
