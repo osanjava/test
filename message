@@ -1,0 +1,435 @@
+
+// 判断处理需要向后端传的入参
+function main({ store, util, requests }) {
+  const amap = window.map
+  const zoom = window.map.getZoom()
+  const authority = util.session.get('allPermissions') || {}
+  const category = store.get('lastSelect', {}).data
+  const genre = store.get('firstSelect', {}).data
+  const date = fetchLastDataDate().curPeriod
+  const map = store.get('map');
+  map.province = [];
+  map.poi = [];
+  map.grid = [];
+  let data = {};
+  let area = "";
+  const cityMarkers = [];
+  if (store.get('map').cityMarkers) {
+    amap.remove(store.get('map').cityMarkers)
+  }
+  if (store.get('map').countyMarkers) {
+    amap.remove(store.get('map').countyMarkers)
+  }
+  if (store.get('map').tradingMarkers) {
+    amap.remove(store.get('map').tradingMarkers)
+  }
+  if (store.get('map').townMarkers) {
+    amap.remove(store.get('map').townMarkers)
+  }
+  if (authority.countyCode) {
+    if (zoom >= 14) {
+      let indexDataSetName = '';
+      if (store.get('mapRadioSwitch').value === '1') {
+        indexDataSetName = 'queryConsumeIndexWithAllInfoByCityCode';
+      } else if (store.get('mapRadioSwitch').value === '2') {
+        indexDataSetName = 'adm_ddm_app_mct_ads_cvp_mct_people_idx_dd_21ee1551420111767';
+      } else if (store.get('mapRadioSwitch').value === '3') {
+        indexDataSetName = 'query_saturation_idx_for_map';
+      }
+      data = {
+        "dataSetName": indexDataSetName,
+        "isNeedTotalNum": false,
+        "pageSize": 201,
+        "pageNum": 1,
+        "outputFieldList": [],
+        "paramMap": [
+          { "key": "countyCode", "value": authority.countyCode },
+          { "key": "type", "value": genre },
+          { "key": "periodStart", "value": date },
+          { "key": "periodEnd", "value": date },
+          { "key": "category", "value": category }
+        ]
+      }
+
+      if (store.get('map').cityMarkers) {
+        amap.remove(store.get('map').cityMarkers)
+      }
+      if (genre === 'town') {
+        area = 'town';
+        // const arr = [];
+        // util.session.get('allTown').map((item)=>{
+        //   var boundary = []
+        //   item.coordis.map((v)=>{
+        //     if (v.split(' ')[0] && v.split(' ')[1]) {
+        //       boundary.push({"lng": v.split(' ')[0], "lat": v.split(' ')[1]})
+        //     }
+        //   })
+        //   arr.push(Object.assign(
+        //     {"areaCode": item.areaCode},
+        //     {"areaName": item.areaName},
+        //     {"cate": item.cate},
+        //     {"boundary": boundary},
+        //     {"gridId": item.id},
+        //     {"color": genColor(item.areaCode)},
+        //     {"gridLevel": '3'},
+        //     {"type": area}
+        //   ))
+        // })
+        // map.grid = arr;
+      } else if (genre === 'trading') {
+        area = 'trading';
+        // const arr = [];
+        // util.session.get('allTrading').map((item)=>{
+        //   var boundary = []
+        //   item.coordis.map((v)=>{
+        //     if (v.split(' ')[0] && v.split(' ')[1]) {
+        //       boundary.push({"lng": v.split(' ')[0], "lat": v.split(' ')[1]})
+        //     }
+        //   })
+        //   arr.push(Object.assign(
+        //     {"areaCode": item.areaCode},
+        //     {"areaName": item.areaName},
+        //     {"cate": item.cate},
+        //     {"boundary": boundary},
+        //     {"gridId": item.id},
+        //     {"color": genColor(item.areaCode)},
+        //     {"gridLevel": '3'},
+        //     {"type": area}
+        //   ))
+        // })
+        // map.grid = arr;
+      }
+    } else {
+      setTimeout(()=>{
+        const marker = new window.AMap.Marker({
+          position: [getMapCountyCoord()[authority.countyName].lng, getMapCountyCoord()[authority.countyName].lat],
+          content: "<div class='circular_icon'>" + store.get('mapStateCurrentRegin').text + store.get('mapStateCurrentNumber').text + "</div>",
+          clickable: true,
+          zIndex:999,
+          data:{
+            "areaCode":authority.countyCode,
+            "type":"county",
+            "areaName": authority.countyName,
+            "value":store.get('mapStateCurrentNumber').text
+          }
+        })
+        cityMarkers.push(marker);
+        amap.add(marker);
+        map.cityMarkers = cityMarkers;
+        bindUpdate(store,'map.cityMarkers',cityMarkers)
+        onMouseover({store},marker);
+        onMouseout({store},marker);
+      },1000)
+    }
+    if (JSON.stringify(data) !== "{}") {
+      service({ store, util, requests }, data, amap, area)
+    }
+  } else {
+    if (zoom <= 13) {
+      area = 'county';
+      // if (store.get('mapRadioSwitch').value === '1') {
+      //   var indexDataSetName = 'queryConsumeIndexByPeriodWithCompare';
+      //   var consumerIndexLineChartData = {
+      //     "dataSetName": indexDataSetName,
+      //     "isNeedTotalNum": false,
+      //     "pageSize": 201,
+      //     "pageNum": 1,
+      //     "outputFieldList": [],
+      //     "paramMap": [{ "key": "areaCode", "value": authority.cityCode }, { "key": "type", "value": 'city' }, { "key": "period", "value": date }, { "key": "category", "value": "all" }]
+      //   }
+      //   util.service.call(requests.allDs, { "bizParam": consumerIndexLineChartData }).then(result => {
+      //     if (result && result.success) {
+      //       bindUpdate(store, 'mapStateCurrentNumber.text', disposeArrayData(result.resultObj).values[0].indexVal);
+      //       const marker = new window.AMap.Marker({
+      //         position: ['119.065421', '26.473735'],
+      //         content: "<div class='circular_icon'>" + authority.cityName + disposeArrayData(result.resultObj).values[0].indexVal + "</div>",
+      //         clickable: true
+      //       })
+      //       cityMarkers.push(marker);
+      //       amap.add(marker);
+      //       map.cityMarkers = cityMarkers;
+      //     } else {
+      //       util.message.error(result.errorMsg)
+      //     }
+      //   });
+      // }
+      let indexDataSetName = '';
+      if (store.get('mapRadioSwitch').value === '1') {
+        indexDataSetName = 'queryConsumeIndexOrderByPeriodAsc';
+      } else if (store.get('mapRadioSwitch').value === '2') {
+        indexDataSetName = 'queryPeopleIdxOrderByPeriod';
+      } else if (store.get('mapRadioSwitch').value === '3') {
+        indexDataSetName = 'querySaturationIdxOrderByIndexValDesc';
+      }
+      // map.province = [
+      //   { "place": "350101", "name": "市辖区", "color": "#FFE393", "areaCode": "350101000000", "type": "county"},
+      //   { "place": "350102", "name": "鼓楼区", "color": "#E6C78E", "areaCode": "350102000000", "type": "county"},
+      //   { "place": "350103", "name": "台江区", "color": "#F7997B", "areaCode": "350103000000", "type": "county"},
+      //   { "place": "350104", "name": "仓山区", "color": "#CC7E73", "areaCode": "350104000000", "type": "county"},
+      //   { "place": "350105", "name": "马尾区", "color": "#de6e6e", "areaCode": "350105000000", "type": "county"},
+      //   { "place": "350111", "name": "晋安区", "color": "#A5D047", "areaCode": "350111000000", "type": "county"},
+      //   { "place": "350121", "name": "闽侯县", "color": "#6DC052", "areaCode": "350121000000", "type": "county"},
+      //   { "place": "350122", "name": "连江县", "color": "#6dbe53", "areaCode": "350122000000", "type": "county"},
+      //   { "place": "350123", "name": "罗源县", "color": "#26a556", "areaCode": "350123000000", "type": "county"},
+      //   { "place": "350124", "name": "闽清县", "color": "#48804f", "areaCode": "350124000000", "type": "county"},
+      //   { "place": "350125", "name": "永泰县", "color": "#63c29c", "areaCode": "350125000000", "type": "county"},
+      //   { "place": "350128", "name": "平潭县", "color": "#00af9e", "areaCode": "350128000000", "type": "county"},
+      //   { "place": "350181", "name": "福清市", "color": "#048a8b", "areaCode": "350181000000", "type": "county"},
+      //   { "place": "350112", "name": "长乐区", "color": "#00a6ce", "areaCode": "350112000000", "type": "county"}
+      // ]
+      data = {
+        "dataSetName": indexDataSetName,
+        "isNeedTotalNum": false,
+        "pageSize": 201,
+        "pageNum": 1,
+        "outputFieldList": [],
+        "paramMap": [
+          { "key": "areaCode", "value": JSON.stringify(util.session.get('allCountyCode')) },
+          { "key": "type", "value": area },
+          { "key": "periodStart", "value": date },
+          { "key": "periodEnd", "value": date },
+          { "key": "category", "value": category }
+        ]
+      }
+    } else if (zoom >= 14) {
+      var allAreaCode = "";
+      if (genre === 'town') {
+        area = 'town';
+      //   allAreaCode = JSON.stringify(util.session.get('allTownCode'));
+      //   map.province = [];
+      //   const arr = [];
+      //   util.session.get('allTown').map((item)=>{
+      //     var boundary = []
+      //     item.coordis.map((v)=>{
+      //       if (v.split(' ')[0] && v.split(' ')[1]) {
+      //         boundary.push({"lng": v.split(' ')[0], "lat": v.split(' ')[1]})
+      //       }
+      //     })
+      //     arr.push(Object.assign(
+      //       {"areaCode": item.areaCode},
+      //       {"areaName": item.areaName},
+      //       {"cate": item.cate},
+      //       {"boundary": boundary},
+      //       {"gridId": item.id},
+      //       {"color": genColor(item.areaCode)},
+      //       {"gridLevel": '3'},
+      //       {"type": area}
+      //     ))
+      //   })
+      //   map.grid = arr;
+      // } else if (genre === 'trading') {
+        area = 'trading';
+        allAreaCode = JSON.stringify(util.session.get('allTradingCode'));
+        // map.province = [];
+        // const arr = [];
+        // util.session.get('allTrading').map((item)=>{
+        //   var boundary = []
+        //   item.coordis.map((v)=>{
+        //     if (v.split(' ')[0] && v.split(' ')[1]) {
+        //       boundary.push({"lng": v.split(' ')[0], "lat": v.split(' ')[1]})
+        //     }
+        //   })
+        //   arr.push(Object.assign(
+        //     {"areaCode": item.areaCode},
+        //     {"areaName": item.areaName},
+        //     {"cate": item.cate},
+        //     {"boundary": boundary},
+        //     {"gridId": item.id},
+        //     {"color": genColor(item.areaCode)},
+        //     {"gridLevel": '3'},
+        //     {"type": area}
+        //   ))
+        // })
+        // map.grid = arr;
+      }
+      let indexDataSetName = '';
+      if (store.get('mapRadioSwitch').value === '1') {
+        indexDataSetName = 'queryConsumeIndexWithAllInfoByCityCode';
+      } else if (store.get('mapRadioSwitch').value === '2') {
+        indexDataSetName = 'adm_ddm_app_mct_ads_cvp_mct_people_idx_dd_21ee1551420111767';
+      } else if (store.get('mapRadioSwitch').value === '3') {
+        indexDataSetName = 'query_saturation_idx_for_map';
+      }
+      data = {
+        "dataSetName": indexDataSetName,
+        "isNeedTotalNum": false,
+        "pageSize": 201,
+        "pageNum": 1,
+        "outputFieldList": [],
+        "paramMap": [
+          { "key": "cityCode", "value": authority.cityCode },
+          { "key": "type", "value": genre },
+          { "key": "periodStart", "value": date },
+          { "key": "periodEnd", "value": date },
+          { "key": "category", "value": category }
+        ]
+      }
+    }
+    if (JSON.stringify(data) !== "{}") {
+      service({ store, util, requests }, data, amap, area)
+    }
+  }
+  // 这里先禁用色块, 改为轮廓模式
+  // map.province = []
+  // map.grid = []
+  store.set('map', map)
+  // console.log(store.get('map'))
+}
+
+function hashCode(strKey) {
+  let hash = 0
+  for (var i = 0; i < strKey.length; i++) {
+    hash = hash * 31 + strKey.charCodeAt(i);
+    hash = intValue(hash);
+  }
+  return hash
+}
+
+function intValue(num) {
+  var MAX_VALUE = 0x7fffffff
+  var MIN_VALUE = -0x80000000
+  if (num > MAX_VALUE || num < MIN_VALUE) {
+    return num &= 0xFFFFFFFF
+  }
+  return num
+}
+
+function genColor(text) {
+  const color = [
+    "#ffe292",
+    "#e5c68d",
+    "#f7987a",
+    "#cb7d73",
+    "#de6e6e",
+    "#a4cf49",
+    "#6dbe53",
+    "#26a556",
+    "#48804f",
+    "#63c29c",
+    "#00af9e",
+    "#048a8b",
+    "#00a6ce",
+    "#0186c4",
+    "#01669c"
+  ]
+  return color[Math.abs(hashCode(text)) % color.length]
+}
+
+// 获取数据
+function service({ store, util, requests }, data, amap, area) {
+  const countyMarkers = [];
+  const townMarkers = [];
+  const tradingMarkers = [];
+  if (store.get('map').cityMarkers) {
+    amap.remove(store.get('map').cityMarkers)
+  }
+  if (store.get('map').countyMarkers) {
+    amap.remove(store.get('map').countyMarkers)
+  }
+  if (store.get('map').tradingMarkers) {
+    amap.remove(store.get('map').tradingMarkers)
+  }
+  if (store.get('map').townMarkers) {
+    amap.remove(store.get('map').townMarkers)
+  }
+  util.service.call(requests.allDs, { "bizParam": data }).then(result => {
+    if (result && result.success) {
+      var areaIndex = [];
+      var allArr = disposeArrayData(result.resultObj).values;
+      if (area === 'county') {
+        allArr.map((item, index)=>{
+          areaIndex.push(Object.assign(item, { "center": getMapCountyCoord()[allArr[index].areaName] }, { "code": "mct", }))
+          const marker = new window.AMap.Marker({
+            position: [item.center.lng, item.center.lat],
+            content: "<div class='circular_icon'>" + item.areaName + "<span>"+ item.indexVal+"</span></div>",
+            clickable: true
+          })
+          countyMarkers.push(marker);
+          amap.add(marker);
+        })
+        bindUpdate(store, 'map.countyMarkers', countyMarkers);
+      } else if (area === "town") {
+        var allTown = util.session.get('allTown');
+        const boundary = []
+        const arr = []
+        allTown.map((items, idx)=>{
+          items.coordis.map((v,i)=>{
+            if (v.split(' ')[0] && v.split(' ')[1]) {
+              boundary.push({"lng": v.split(' ')[0], "lat": v.split(' ')[1]})
+              items.boundary=boundary;
+            }
+          })
+          allArr.map((item, index)=>{
+            if (item.areaCode === items.areaCode) {
+              areaIndex.push(Object.assign(item, { "code": "mct" }, { "center": { "lng": items.centalPoint.split(' ')[0], "lat": items.centalPoint.split(' ')[1] } }))
+              const marker = new window.AMap.Marker({
+                position: [items.centalPoint.split(' ')[0], items.centalPoint.split(' ')[1]],
+                content: "<div class='trading_cont'><div class='trading_icon' style='background:#1890ff'></div><div class='word'>" + item.areaName + item.indexVal + "</div></div>",
+                clickable: true,
+                zIndex:999,
+                data:{
+                  "areaCode": item.areaCode,
+                  "areaName": item.areaName,
+                  "cate": item.cate,
+                  "boundary": items.coordis,
+                  "gridId": item.id,
+                  "color": genColor(item.areaCode),
+                  "gridLevel": '3',
+                  "type": area
+                }
+              })
+              onMouseover({store},marker)
+              onMouseout({store},marker)
+              onClick({ store, util, requests },marker)
+              townMarkers.push(marker);
+              amap.add(marker);
+            }
+          })
+        })
+        bindUpdate(store, 'map.townMarkers', townMarkers)
+      } else if (area === "trading") {
+        var allTrading = util.session.get('allTrading');
+        const boundary = []
+        const arr = []
+        allTrading.map((items, idx)=>{
+          items.coordis.map((v,i)=>{
+            if (v.split(' ')[0] && v.split(' ')[1]) {
+              boundary.push({"lng": v.split(' ')[0], "lat": v.split(' ')[1]})
+              items.boundary=boundary;
+            }
+          })
+          allArr.map((item, index)=>{
+            if (item.areaCode === items.areaCode) {
+              areaIndex.push(Object.assign(item, { "code": "mct" }, { "center": { "lng": items.centalPoint.split(' ')[0], "lat": items.centalPoint.split(' ')[1] } }))
+              const marker = new window.AMap.Marker({
+                position: [items.centalPoint.split(' ')[0], items.centalPoint.split(' ')[1]],
+                content: "<div class='trading_cont'><div class='trading_icon' style='background:#1890ff'></div><div class='word'>" + item.areaName + item.indexVal + "</div></div>",
+                clickable: true,
+                zIndex:999,
+                data:{
+                  "areaCode": item.areaCode,
+                  "areaName": item.areaName,
+                  "cate": item.cate,
+                  "boundary": items.coordis,
+                  "gridId": item.id,
+                  "color": genColor(item.areaCode),
+                  "gridLevel": '3',
+                  "type": area
+                }
+              })
+              onMouseover({store},marker)
+              onMouseout({store},marker)
+              onClick({ store, util, requests },marker)
+              tradingMarkers.push(marker);
+              amap.add(marker);
+            }
+          })
+        })
+        bindUpdate(store, 'map.tradingMarkers', tradingMarkers);
+      }
+      // bindUpdate(store, 'map.poi', areaIndex);
+    } else {
+      util.message.error(result.errorMsg)
+    }
+  })
+}
