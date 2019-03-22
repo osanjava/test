@@ -19,7 +19,12 @@ body,
 .select_cont ul li {
   margin: 10px;
 }
-.tooltip_cont , .tooltip_cont div{
+.tooltip_cont{
+  margin: 0 5px;
+  display: inline;
+  vertical-align: middle;
+}
+.tooltip_cont div{
   display: inline;
 }
 /* 地图各类”点“样式 */
