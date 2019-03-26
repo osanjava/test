@@ -19,18 +19,7 @@ body,
 .select_cont ul li {
   margin: 10px;
 }
-.tooltip_cont{
-  margin: 0 5px;
-  display: inline;
-  vertical-align: middle;
-}
-.tooltip_cont div{
-  display: inline;
-}
 /* 地图各类”点“样式 */
-/* .amap-markers .amap-marker{
-  z-index: 101;
-} */
 .circular_icon {
   width: 60px;
   height: 60px;
@@ -146,10 +135,6 @@ body,
 }
 
 
-/* 
-.ant-dropdown-link {
-  color: #ccc;
-} */
 .ant-checkbox-group .ant-checkbox-group-item {
   position: relative;
 }
@@ -250,7 +235,7 @@ body,
   color: #fff;
   background: transparent;
   display: flex;
-  font-size: 18px;
+  font-size: 16px;
 }
 .silder_bar .crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu-item {
   color: #a2d7ff;
@@ -259,8 +244,8 @@ body,
   width: 100%;
   height: 25px;
   line-height: 25px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 14px;
+  margin-bottom: 5px;
 }
 .silder_bar .crm-menu > .crm-menu-submenu:nth-of-type(2) .crm-menu-submenu-item:hover{
   background: #fff;
@@ -310,11 +295,11 @@ body,
   .crm-menu-submenu
   > .crm-menu-submenu-item {
   width: calc(100% - 20px);
-  height: 25px;
-  line-height: 25px;
+  height: 20px;
+  line-height: 20px;
   padding: 0;
   text-indent: 2em;
-  font-size: 15px;
+  font-size: 14px;
   margin-top: 0;
   margin-left: 20px;
 }
@@ -346,9 +331,6 @@ body,
   border-bottom: 1px dashed #e8e8e8;
   padding:6px 16px;
   text-align: center;
-}
-.table_cont .ant-table .ant-table-content .ant-table-body .ant-table-tbody>tr>td{
-  /* color:#0071BC; */
 }
 .table_cont .clearfix{
   display:flex;
@@ -587,18 +569,6 @@ body,
 }
 .amap-copyright{
   display: none!important;
-}
-.amap-logo{
-  /* position: absolute;
-  left:auto;
-  right:30px;
-  bottom:30px; */
-  /* width: 120px;
-  height: 33px; */
-}
-.amap-logo img{
-  /* width:100%!important;
-  height:auto!important; */
 }
 
 /* 地图左侧展示框 */
