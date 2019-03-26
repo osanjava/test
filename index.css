@@ -306,6 +306,7 @@ body,
   text-indent: 1.5em;
   font-size: 14px;
   margin-top: 0;
+  white-space: nowrap;
   margin-left: 20px;
 }
 .silder_bar .crm-menu
