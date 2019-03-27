@@ -5,6 +5,25 @@ body,
   margin: 0 auto;
   overflow: hidden;
 }
+.content{
+  width:100%;
+  background-color: rgb(232, 232, 232);
+  height: 100%;
+  overflow-y: auto;
+  padding: 10px;
+}
+.index_cont{
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.chart_cont{
+  width: calc(50% - 5px);
+  margin-bottom: 10px;
+}
 /* 部分select样式 */
 .select_cont {
   min-width: 300px;
