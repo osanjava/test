@@ -49,7 +49,7 @@ body,
   font-size: 12px;
   line-height: normal;
   padding: 14px 0;
-  background:rgba(17, 144, 255, 0.5);
+  /* background:rgba(17, 144, 255, 0.5); */
   box-shadow: 0 0 4px rgba(0,0,0,0.5);
   color:#fff
 }
@@ -57,7 +57,7 @@ body,
   font-size:16px;
 }
 .circular_icon:hover{
-  background:rgb(17, 144, 255)
+  /* background:rgb(17, 144, 255) */
 }
 .amap-icon {
   width: 60px !important;
@@ -76,13 +76,13 @@ body,
   width:32px;
   height:32px;
   border-radius: 50%;
-  border: 1px solid rgb(24, 144, 255);
+  /* border: 1px solid rgb(24, 144, 255); */
   box-sizing: border-box;
 }
 .town_cont .slash{
   width: 10px;
   height: 1px;
-  background-color: rgb(24, 144, 255);
+  /* background-color: rgb(24, 144, 255); */
   transform: rotate(147deg);
   position: absolute;
   left: 26px;
@@ -98,7 +98,7 @@ body,
   padding: 2px 4px;
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
-  border-bottom: 1px solid rgb(24, 144, 255);
+  /* border-bottom: 1px solid rgb(24, 144, 255); */
   border-radius: 4px;
 }
 
@@ -647,5 +647,5 @@ body,
   text-align: center;
 }
 .pdf_title_cont span{
-  font-size: 16px;
+  font-size: 16px!important;
 }
