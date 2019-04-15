@@ -630,3 +630,19 @@ body,
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
+.map_link_cont  a{
+  font-size: 14px;
+  color: #0071be;
+  padding: 5px 8px;
+  border-radius: 5px;
+  border: 1px solid #0071be;
+}
+
+/*pdf样式*/
+.pdf_content{
+
+}
+.pdf_title_cont{
+  font-size: 16px;
+  text-align: center;
+}
