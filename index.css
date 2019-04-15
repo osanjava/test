@@ -663,7 +663,7 @@ body,
 .chart_data_cont{
   padding: 0 30px;
 }
-.chart_title_cont{
+.chart_title_cont span{
   color:#333;
   font-size: 14px!important;
 }
