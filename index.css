@@ -655,9 +655,9 @@ body,
 .instructions_cont{
   text-indent: 2em;
   color:#333;
-  font-size: 14px;
+  font-size: 14px!important;
 }
 .chart_title_cont{
   color:#333;
-  font-size: 14px;
+  font-size: 14px!important;
 }
