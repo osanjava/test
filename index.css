@@ -643,10 +643,12 @@ body,
 
 }
 .pdf_title_cont{
+  padding:20px 0;
   text-align: center;
 }
 .pdf_title_cont span{
-  font-size: 18px!important;
+  font-size: 22px!important;
+  font-weight: 400;
 }
 .index_title_cont{
   color: #333;
