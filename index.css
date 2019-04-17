@@ -216,6 +216,11 @@ body,
   margin:auto;
   z-index:-1
 }
+.change_cont {
+  background: rgb(245, 245, 245);
+/* url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*V9FSRJlO9WQAAAAAAAAAAABjARQnAQ) no-repeat 10px center; */
+  background-size: auto;
+}
 .map_cont {
   background: rgb(245, 245, 245)
     url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*buJJRYqHbGAAAAAAAAAAAABjARQnAQ)
