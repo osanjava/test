@@ -638,6 +638,11 @@ body,
   border: 1px solid #0071be;
 }
 
+
+.help_cont ol,.help_cont ul{
+  margin-left: 15px;
+}
+
 /*pdf样式*/
 .pdf_content{
 
