@@ -628,6 +628,7 @@ body,
   text-indent: 2em;
 }
 .chart_title_cont span{
+  text-indent:0em;
   color:#333;
   font-size: 14px!important;
 }
