@@ -620,9 +620,6 @@ body,
   color:#333;
   font-size: 14px!important;
 }
-.instructions_cont .cicada-label{
-
-}
 .chart_data_cont .chart_title_cont{
   padding: 10px 0;
   text-indent: 2em;
@@ -631,4 +628,7 @@ body,
   text-indent:0em;
   color:#333;
   font-size: 14px!important;
+}
+.table_content_cont{
+  padding: 0 30px;
 }
