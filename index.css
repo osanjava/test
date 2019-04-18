@@ -620,6 +620,10 @@ body,
   color:#333;
   font-size: 14px!important;
 }
+.instructions_cont>div,.instructions_cont .cicada-label{
+  padding: 5px 0;
+}
+
 .chart_data_cont .chart_title_cont{
   padding: 10px 0;
   text-indent: 2em;
