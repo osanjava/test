@@ -56,9 +56,6 @@ body,
 .circular_icon span{
   font-size:16px;
 }
-.circular_icon:hover{
-  /* background:rgb(17, 144, 255) */
-}
 .amap-icon {
   width: 60px !important;
   height: 60px !important;
@@ -68,40 +65,6 @@ body,
   width: 100% !important;
   height: 100% !important;
 }
-
-.town_cont{
-  position: relative;
-}
-.town_cont .circular{
-  width:32px;
-  height:32px;
-  border-radius: 50%;
-  /* border: 1px solid rgb(24, 144, 255); */
-  box-sizing: border-box;
-}
-.town_cont .slash{
-  width: 10px;
-  height: 1px;
-  /* background-color: rgb(24, 144, 255); */
-  transform: rotate(147deg);
-  position: absolute;
-  left: 26px;
-  top: 24px;
-}
-.town_cont .word{
-  border-bottom: 1px solid #fff;
-  position: absolute;
-  left: 35px;
-  top: -2px;
-  white-space: nowrap;
-  font-size: 14px;
-  padding: 2px 4px;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
-  /* border-bottom: 1px solid rgb(24, 144, 255); */
-  border-radius: 4px;
-}
-
 
 .trading_cont{
   position: relative;
@@ -153,7 +116,6 @@ body,
   border-radius: 5px 10px;
   box-shadow: 1px 1px 1px #666;
 }
-
 
 .ant-checkbox-group .ant-checkbox-group-item {
   position: relative;
@@ -218,7 +180,6 @@ body,
 }
 .change_cont {
   background: rgb(245, 245, 245);
-/* url(https://gw.alipayobjects.com/mdn/cdvs/afts/img/A*V9FSRJlO9WQAAAAAAAAAAABjARQnAQ) no-repeat 10px center; */
   background-size: auto;
 }
 .map_cont {
@@ -319,11 +280,7 @@ body,
 .silder_bar .crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu {
   padding: 3px 0;
 }
-.silder_bar .crm-menu
-  > .crm-menu-submenu
-  > .crm-menu-submenu-children
-  .crm-menu-submenu
-  > .crm-menu-submenu-item {
+.silder_bar .crm-menu > .crm-menu-submenu > .crm-menu-submenu-children .crm-menu-submenu  > .crm-menu-submenu-item {
   width: calc(100% - 20px);
   height: 20px;
   line-height: 20px;
@@ -334,10 +291,7 @@ body,
   white-space: nowrap;
   margin-left: 20px;
 }
-.silder_bar .crm-menu
-  > .crm-menu-submenu
-  > .crm-menu-submenu-children
-  .crm-menu-submenu-item-vertical-selected {
+.silder_bar .crm-menu  > .crm-menu-submenu  > .crm-menu-submenu-children .crm-menu-submenu-item-vertical-selected {
   background: #fff;
   color: #0071BC;
   position: relative;
@@ -382,36 +336,30 @@ body,
   line-height: 14px;
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-item{
-  /* color:#0071BC; */
   border:none;
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-item a{
-  vertical-align: middle;
   height:16px;
   display: block;
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-item-active{
   color: #fff;
-  /* background:#0071BC; */
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-item-active a{
   color: #fff;
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-prev a,
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-next a{
-  /* color:#0071BC; */
   border-color: transparent;
 }
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-prev a::after,
 .table_cont .ant-pagination.ant-table-pagination li.ant-pagination-next a::after{
-  /* color:#0071BC; */
   font-size: 18px;
 }
 .table_btn .ant-btn{
   border-color:#1f77b4;
   color: #1f77b4;
 }
-
 
 
 .select_multiple_cont,.select_multiple_cont .ant-select-selection,.select_multiple_cont .ant-select-selection__rendered,.select_multiple_cont .ant-select-selection__rendered ul{
@@ -450,7 +398,6 @@ body,
   background-color: #fff;
   color: #338de6;
 }
-
 .radio_screen_cont .ant-radio-group{
   width:100%;
   display: flex;
@@ -664,8 +611,11 @@ body,
   color: #333;
   font-size: 16px;
 }
+.instructions_cont{
+  text-indent: 2em; 
+}
 .instructions_cont .introduce_title,.instructions_cont .cicada-label{
-  text-indent: 2em;
+  /* text-indent: 2em; */
   color:#333;
   font-size: 14px!important;
 }
@@ -674,6 +624,9 @@ body,
 }
 .chart_data_cont{
   padding: 0 30px;
+}
+.chart_title_cont{
+  padding: 10px 0;
 }
 .chart_title_cont span{
   color:#333;
