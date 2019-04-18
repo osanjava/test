@@ -623,11 +623,9 @@ body,
 .instructions_cont .cicada-label{
 
 }
-.chart_data_cont{
-  padding: 0 30px;
-}
-.chart_title_cont{
+.chart_data_cont .chart_title_cont{
   padding: 10px 0;
+  text-indent: 2em;
 }
 .chart_title_cont span{
   color:#333;
