@@ -616,7 +616,7 @@ body,
   text-indent: 2em; 
 }
 .instructions_cont .introduce_title,.instructions_cont .cicada-label{
-  /* text-indent: 2em; */
+  text-indent:0em;
   color:#333;
   font-size: 14px!important;
 }
