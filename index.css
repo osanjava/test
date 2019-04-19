@@ -598,19 +598,19 @@ body,
 
 /*pdf样式*/
 .pdf_content{
-
+  padding: 10px 60px;
 }
 .pdf_title_cont{
   padding:20px 0;
   text-align: center;
 }
 .pdf_title_cont span{
-  font-size: 22px!important;
+  font-size: 30px!important;
   font-weight: 400;
 }
 .index_title_cont{
   color: #333;
-  font-size: 16px;
+  font-size: 22px;
 }
 .instructions_cont{
   text-indent: 2em; 
@@ -618,20 +618,27 @@ body,
 .instructions_cont .introduce_title,.instructions_cont .cicada-label{
   text-indent:0em;
   color:#333;
-  font-size: 14px!important;
+  font-size: 18px!important;
 }
 .instructions_cont>div,.instructions_cont .cicada-label{
   padding: 5px 0;
 }
-
+.chart_data_cont{
+  width: 50%;
+  margin: 0 auto;
+}
 .chart_data_cont .chart_title_cont{
+  padding: 10px 0;
+  text-indent: 2em;
+}
+.table_data_cont .chart_title_cont{
   padding: 10px 0;
   text-indent: 2em;
 }
 .chart_title_cont span{
   text-indent:0em;
   color:#333;
-  font-size: 14px!important;
+  font-size: 18px!important;
 }
 .table_content_cont{
   padding: 0 30px;
