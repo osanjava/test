@@ -600,7 +600,10 @@ body,
 .pdf_content{
   width: 86%;
   margin: 0 auto;
-  padding: 10px 40px;
+}
+.pdf_content>div{
+  padding-left: 30px;
+  padding-right: 30px;
 }
 .pdf_title_cont{
   padding:20px 0;
