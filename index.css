@@ -629,7 +629,6 @@ body,
 }
 .chart_data_cont .chart_title_cont{
   padding: 10px 0;
-  text-indent: 2em;
 }
 .table_data_cont .chart_title_cont{
   padding: 10px 0;
@@ -641,5 +640,5 @@ body,
   font-size: 18px!important;
 }
 .table_content_cont{
-  padding: 0 30px;
+  padding: 0 50px 0 30px;
 }
