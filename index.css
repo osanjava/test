@@ -626,6 +626,7 @@ body,
 }
 .instructions_cont>div,.instructions_cont .cicada-label{
   padding: 5px 0;
+  word-break: break-all;
 }
 .chart_data_cont{
   width: 50%;
