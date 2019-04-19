@@ -616,10 +616,12 @@ body,
 }
 .instructions_cont{
   text-indent: 2em; 
+  word-break: break-all;
 }
 .instructions_cont .introduce_title,.instructions_cont .cicada-label{
   text-indent:0em;
   color:#333;
+  word-break: break-all;
   font-size: 18px!important;
 }
 .instructions_cont>div,.instructions_cont .cicada-label{
