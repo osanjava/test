@@ -598,7 +598,9 @@ body,
 
 /*pdf样式*/
 .pdf_content{
-  padding: 10px 60px;
+  width: 80%;
+  margin: 0 auto;
+  /* padding: 10px 60px; */
 }
 .pdf_title_cont{
   padding:20px 0;
