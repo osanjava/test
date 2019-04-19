@@ -652,6 +652,6 @@ body,
 .table_content_cont{
   padding: 0 40px 0 30px;
 }
-.table_content_cont .ant-table .ant-table-content .ant-table-header .ant-table-thead>tr>th, .table_content_cont .ant-table .ant-table-content .ant-table-body .ant-table-tbody>tr>td,.table_content_cont.ant-table-bordered .ant-table-thead > tr > th{
+.table_content_cont .ant-table .ant-table-content .ant-table-header .ant-table-thead>tr>th, .table_content_cont .ant-table .ant-table-content .ant-table-body .ant-table-tbody>tr>td,.table_content_cont .ant-table-thead > tr > th{
   text-align: center;
 }
