@@ -598,9 +598,9 @@ body,
 
 /*pdf样式*/
 .pdf_content{
-  width: 80%;
+  width: 86%;
   margin: 0 auto;
-  /* padding: 10px 60px; */
+  padding: 10px 40px;
 }
 .pdf_title_cont{
   padding:20px 0;
@@ -651,4 +651,7 @@ body,
 }
 .table_content_cont{
   padding: 0 40px 0 30px;
+}
+.table_content_cont .ant-table .ant-table-content .ant-table-header .ant-table-thead>tr>th, .table_content_cont .ant-table .ant-table-content .ant-table-body .ant-table-tbody>tr>td{
+  text-align: center;
 }
