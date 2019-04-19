@@ -624,11 +624,13 @@ body,
   color:#333;
   word-break: break-all;
   word-wrap: break-word;
+  display: block;
   font-size: 18px!important;
 }
 .instructions_cont>div,.instructions_cont .cicada-label{
   padding: 5px 0;
   word-break: break-all;
+  display: block;
   word-wrap: break-word;
 }
 .chart_data_cont{
