@@ -602,8 +602,8 @@ body,
   margin: 0 auto;
 }
 .pdf_content>div{
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 80px;
+  padding-right: 80px;
 }
 .pdf_title_cont{
   padding:20px 0;
